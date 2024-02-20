@@ -9,7 +9,7 @@ Github actions for deleting the docker image tag of DockerHub
 ## Usage
 
 ```yml
-name: build_docker
+name: del_docker_tag
 
 on:
   pull_request:
@@ -35,7 +35,7 @@ jobs:
 
       - name: Delete docker tag
         id: docker_build
-        uses: docker/build-push-action@v5
+        uses: xhofe/del-docker-tag@main
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
