@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           token: ${{ secrets.DOCKER_TOKEN }}
-          tags: pr-${{ github.event.pull_request.number }}
+          tags: user/repo:pr-${{ github.event.pull_request.number }}
 ```

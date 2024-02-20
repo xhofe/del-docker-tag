@@ -29,4 +29,4 @@ jobs:
           username: xhofe
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           # token: ${{ secrets.DOCKER_TOKEN }}
-          tags: pr-${{ github.event.pull_request.number }}
+          tags: xhofe/test:pr-${{ github.event.pull_request.number }}
