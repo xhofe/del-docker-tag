@@ -16,11 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: xhofe/alist
+      # - name: Docker meta
+      #   id: meta
+      #   uses: docker/metadata-action@v5
+      #   with:
+      #     images: xhofe/alist
 
       - name: Delete docker tag
         id: docker_build
@@ -29,4 +29,4 @@ jobs:
           username: xhofe
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           # token: ${{ secrets.DOCKER_TOKEN }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: pr-${{ github.event.pull_request.number }}
