@@ -24741,7 +24741,10 @@ async function getToken(username, password) {
     core.info(`get token for ${username}`);
     const resp = await fetch(`${BASE_URL}/users/login`, {
         method: 'POST',
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     });
     if (resp.status !== 200) {
         throw new Error(`Failed to get token: ${resp.statusText}`);
