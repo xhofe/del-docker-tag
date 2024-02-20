@@ -1,6 +1,6 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'del-docker-tag'
+description: 'Github actions for deleting the docker image tag of DockerHub'
+author: 'xhofe'
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
@@ -9,15 +9,18 @@ branding:
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  username:
+    description: 'Username of docker hub'
+    required: false
+  password:
+    description: 'Password of docker hub'
+    required: false
+  token:
+    description: 'Token of docker hub'
+    required: false
+  tags:
+    description: 'Tags of docker image'
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
 
 runs:
   using: node20
