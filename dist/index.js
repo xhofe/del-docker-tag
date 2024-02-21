@@ -24776,7 +24776,7 @@ async function delTags(username, password, token, tags) {
             throw new Error('Failed to get token');
         }
     }
-    const tagList = tags.split('\n');
+    const tagList = tags.split('\n').flatMap(t => t.split(','));
     for (const tag of tagList) {
         await delTag(tag, token);
     }
