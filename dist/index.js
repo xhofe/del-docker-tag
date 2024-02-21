@@ -24765,12 +24765,13 @@ async function delTag(tag, token) {
     if (!resp.ok) {
         throw new Error(`Failed to delete tag: ${resp.statusText}`);
     }
+    core.info(`✅ tag ${tag} deleted`);
     return resp;
 }
 exports.delTag = delTag;
 async function delTags(username, password, token, tags) {
     if (!token) {
-        const token = await getToken(username, password);
+        token = await getToken(username, password);
         if (!token) {
             throw new Error('Failed to get token');
         }
